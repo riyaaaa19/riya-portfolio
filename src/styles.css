@@ -1,0 +1,392 @@
+/* ===== General Styling ===== */
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    color: #111;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* ===== Header ===== */
+header {
+    position: sticky;
+    top: 0;
+    background: #ff4da6;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.8s ease-in-out;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.5px;
+    transition: transform 0.3s ease;
+}
+
+header h1:hover {
+    transform: scale(1.08);
+}
+
+nav button {
+    background: none;
+    border: none;
+    margin-left: 20px;
+    font-size: 15px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s, border-bottom 0.3s, transform 0.3s;
+}
+
+nav button.active {
+    font-weight: 600;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 2px;
+}
+
+nav button:hover {
+    color: #ffe3f0;
+    transform: translateY(-2px);
+}
+
+/* ===== Sections ===== */
+section {
+    padding: 80px 60px;
+    background: white;
+    animation: fadeIn 1s ease-in;
+}
+
+section h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #ff4da6;
+    text-align: center;
+    position: relative;
+}
+
+section h2::after {
+    content: "";
+    width: 60px;
+    height: 3px;
+    background: #ff4da6;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+    animation: expand 0.8s ease-in-out;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    padding: 100px 60px;
+    min-height: 80vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hero-text h2 {
+    font-size: 52px;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.2;
+    color: #ff4da6;
+}
+
+.hero-text .highlight {
+    background: linear-gradient(45deg, #ff4da6, #ff7eb9);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;  
+}
+
+.hero-text h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+    color: #111;
+}
+
+.hero-text p {
+    max-width: 520px;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ===== Typing Effect Fix ===== */
+.typing-container {
+    display: inline-block;
+    min-width: 300px;
+    white-space: nowrap;
+}
+
+.typing {
+    display: inline-block;
+    border-right: 2px solid #ff4da6;
+    overflow: hidden;
+    vertical-align: middle;
+    animation: typing 2.5s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    0%, 100% { border-color: transparent; }
+    50% { border-color: #ff4da6; }
+}
+
+/* ===== Avatar ===== */
+.hero-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-circle {
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: #ffe066;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.avatar-circle img {
+    width: 95%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatar-circle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 77, 166, 0.3);
+}
+
+/* ===== Buttons ===== */
+button.cta,
+button.outline {
+    margin-right: 12px;
+    padding: 10px 22px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+button.cta {
+    background: #ff4da6;
+    color: white;
+}
+
+button.cta:hover {
+    background: #e04494;
+}
+
+button.outline {
+    background: transparent;
+    color: #ff4da6;
+    border: 2px solid #ff4da6;
+}
+
+button.outline:hover {
+    background: #ff4da6;
+    color: white;
+}
+/* Make <a class="cta"> look like button */
+a.cta {
+    display: inline-block;
+    margin-right: 12px;
+    padding: 10px 22px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    background: #ff4da6;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+a.cta:hover {
+    background: #e04494;
+}
+
+
+/* ===== Social Icons ===== */
+.social-icons {
+    display: flex;
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.social-icons a {
+    color: #ff4da6;
+    transition: color 0.25s;
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #e04494;
+}
+
+/* ===== Footer ===== */
+footer {
+    padding: 40px;
+    text-align: center;
+    background: #ff4da6;
+    color: white;
+    font-weight: 500;
+}
+
+/* ===== Grid for Projects, Certificates, Awards ===== */
+.grid {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* ===== Timeline for Education ===== */
+.timeline {
+    position: relative;
+    margin-left: 20px;
+    padding-left: 40px;
+    border-left: 3px solid #ff4da6;
+}
+
+.timeline-card {
+    position: relative;
+    margin-bottom: 40px;
+    padding: 20px 20px 20px 40px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.timeline-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.timeline-card span {
+    position: absolute;
+    left: -28px;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ff4da6;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes expand {
+    0% { width: 0; }
+    100% { width: 60px; }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-img {
+        margin-top: 30px;
+    }
+}
+/* ===== Timeline Styling for Education (Right-side Images) ===== */
+.timeline {
+    position: relative;
+    padding-right: 60px; /* space for images on the right */
+    margin-left: 20px;
+    border-left: 3px solid #ff4da6;
+}
+
+.timeline .timeline-card {
+    position: relative;
+    margin-bottom: 30px;
+    padding: 15px 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s;
+}
+
+.timeline .timeline-card:hover {
+    transform: scale(1.03);
+}
+
+.timeline .timeline-card img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    right: -65px; /* move image to the right of the card */
+    top: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.timeline .timeline-card h4 {
+    margin: 0 0 6px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.timeline .timeline-card p {
+    margin: 2px 0;
+    font-size: 14px;
+    color: #555;
+}

@@ -1,0 +1,151 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #fdf7fb;
+  color: #333;
+}
+
+.header {
+  background: #b197fc;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header .logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav button {
+  background: none;
+  border: none;
+  color: white;
+  margin-left: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+nav button.active {
+  border-bottom: 2px solid #fff;
+}
+
+.hero {
+  background: linear-gradient(135deg, #fce0f3, #d5c7ff);
+  text-align: center;
+  padding: 120px 40px;
+  color: #4a148c;
+  border-radius: 0 0 50px 50px;
+}
+
+.hero h2 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.about {
+  padding: 80px 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-card {
+  display: flex;
+  background: #ffe4ec;
+  padding: 30px;
+  border-radius: 20px;
+  gap: 30px;
+  max-width: 800px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.projects {
+  padding: 80px 40px;
+  background: #fef9ff;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background: #fff0f6;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.tech {
+  color: #b197fc;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.buttons .btn {
+  background: #b197fc;
+  color: white;
+  padding: 8px 14px;
+  margin: 5px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.buttons .btn:hover {
+  background: #9b84e3;
+}
+
+.contact {
+  padding: 80px 40px;
+  background: #fce0f3;
+  text-align: center;
+}
+
+.contact a {
+  color: #6a1b9a;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  margin: 10px;
+  color: #6a1b9a;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #b197fc;
+  color: white;
+  margin-top: 40px;
+}

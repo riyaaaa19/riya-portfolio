@@ -1,0 +1,159 @@
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: #fff;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  z-index: 100;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #111;
+  letter-spacing: -0.5px;
+}
+
+nav button {
+  background: none;
+  border: none;
+  margin-left: 20px;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+nav button.active {
+  color: #ff4da6;
+  font-weight: 600;
+  border-bottom: 2px solid #ff4da6;
+  padding-bottom: 2px;
+}
+
+nav button:hover {
+  color: #111;
+}
+
+/* Sections */
+section {
+  padding: 80px 60px;
+  background: white;
+}
+
+section h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h2 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.hero-text h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ff4da6;
+  margin-bottom: 20px;
+}
+
+.hero-img img {
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Buttons */
+button.cta {
+  background: #ff4da6;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button.cta:hover {
+  background: #e60084;
+}
+
+button.outline {
+  background: none;
+  border: 1px solid #ff4da6;
+  color: #ff4da6;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button.outline:hover {
+  background: #ff4da6;
+  color: white;
+}
+
+/* Social links */
+.social-icons {
+  margin-top: 25px;
+}
+
+.social-icons a {
+  margin-right: 20px;
+  font-size: 14px;
+  color: #444;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.social-icons a:hover {
+  color: #ff4da6;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 14px;
+  color: #999;
+  border-top: 1px solid #eee;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
