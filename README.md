@@ -1,4 +1,4 @@
-# Riya Saraf Portfolio
+# Riya Saraf - Portfolio
 
 Welcome to my personal portfolio! This website showcases my projects, education, certificates, awards, and hackathon participation. Built using **React.js** with modern styling, this portfolio is fully responsive and interactive.
 
