@@ -483,19 +483,17 @@ footer {
 
 /* About image */
 .about-img {
-    flex: 0 0 320px; /* increased width */
-    display: flex;   /* enable flexbox */
-    justify-content: center;
-    align-items: center; /* vertically center with the points */
-    margin-top: -70px;
+    flex: 0 0 280px;
+    text-align: center;
 }
 
 .about-img .avatar-circle {
-    width: 320px;  /* increased size */
-    height: 320px; /* increased size */
+    width: 290px;
+    height: 290px;
+    margin: 0 auto;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -509,7 +507,6 @@ footer {
     transform: scale(1.05);
     box-shadow: 0 12px 30px rgba(255,77,166,0.3);
 }
-
 
 /* ===== Skills Section ===== */
 .skills-section {
@@ -543,26 +540,6 @@ footer {
 .skills-card li {
     display: none; /* hide old headings/lists */
 }
-.about h3.skills-heading {
-    color: #ff1493; /* Dark Pink */
-    text-align: center;
-    font-weight: 700;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    position: relative;
-    font-size: 24px;
-}
-
-.about h3.skills-heading::after {
-    content: "";
-    width: 80px;       /* length of underline */
-    height: 3px;       /* thickness */
-    background: #ff1493; /* Dark Pink underline */
-    display: block;
-    margin: 10px auto 0;
-    border-radius: 2px;
-}
-
 
 /* ===== Responsive About Section ===== */
 @media (max-width: 900px) {

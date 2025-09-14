@@ -6,7 +6,6 @@ import "./styles.css";
 export default function RiyaSarafPortfolio() {
   const [activePage, setActivePage] = useState("home");
 
-  // ===== Data Sections =====
   const projects = [
     {
       title: "Leave Management System",
@@ -87,36 +86,15 @@ export default function RiyaSarafPortfolio() {
   ];
 
   const hackathons = [
-    {
-      title: "Ecopreneur Hackathon",
-      desc: "Hosted by Baderia Global Institute of Engineering and Management",
-      img: "/images/hackathon1.jpg",
-    },
-    {
-      title: "36-hour HackSRIT Hackathon",
-      desc: "Hosted by Shri Ram Institute of technology",
-      img: "/images/hackathon2.jpg",
-    },
-    {
-      title: "Operation Eclipse – Stealth Spacecraft Design & Architecture",
-      desc: "Competition at IIITDM Jabalpur",
-      img: "/images/hackathon3.jpg",
-    },
-    {
-      title: "Global Entrepreneurship Summit 2025",
-      desc: "IIT Kharagpur",
-      img: "/images/hackathon4.jpg",
-    },
-    {
-      title: "All India Women only Hackathon 2023",
-      desc: "Hosted by Shooting stars foundation",
-      img: "/images/hackathon5.jpg",
-    },
+    { title: "Ecopreneur Hackathon", desc: "Hosted by Baderia Global Institute of Engineering and Management", img: "/images/hackathon1.jpg" },
+    { title: "36-hour HackSRIT Hackathon", desc: "Hosted by Shri Ram Institute of technology", img: "/images/hackathon2.jpg" },
+    { title: "Operation Eclipse – Stealth Spacecraft Design & Architecture", desc: "Competition at IIITDM Jabalpur", img: "/images/hackathon3.jpg" },
+    { title: "Global Entrepreneurship Summit 2025", desc: "IIT Kharagpur", img: "/images/hackathon4.jpg" },
+    { title: "All India Women only Hackathon 2023", desc: "Hosted by Shooting stars foundation", img: "/images/hackathon5.jpg" },
   ];
 
   return (
     <div>
-      {/* ===== Header ===== */}
       <header>
         <h1>Riya Saraf</h1>
         <nav>
@@ -132,12 +110,8 @@ export default function RiyaSarafPortfolio() {
         </nav>
       </header>
 
-      {/* ===== Home Section ===== */}
       {activePage === "home" && (
         <section className="hero">
-          <div className="particle-bg">
-            <span></span><span></span><span></span><span></span><span></span>
-          </div>
           <div className="hero-text">
             <h2>
               Hi There, I'm <span className="highlight">Riya Saraf</span>
@@ -153,33 +127,31 @@ export default function RiyaSarafPortfolio() {
               full-stack development, and ML/AI. Passionate about building
               impactful solutions and contributing to open-source projects.
             </p>
-
             <div className="hero-buttons">
-              <button className="cta" onClick={() => setActivePage("projects")}>View Projects</button>
+              <button className="cta" onClick={() => setActivePage("projects")}>
+                View Projects
+              </button>
               <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=riyasaraf19@gmail.com"
+                href="mailto:riyasaraf19@gmail.com"
+                className="cta"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cta"
               >
                 Contact Me
               </a>
               <a
                 href={process.env.PUBLIC_URL + "/images/resume.pdf"}
+                className="cta"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cta"
               >
                 View Resume
               </a>
             </div>
-
             <div className="social-icons">
               <a href="https://linkedin.com/in/riya-saraf-9223a9257" target="_blank" rel="noreferrer"><Linkedin size={18} /></a>
               <a href="https://github.com/riyaaaa19" target="_blank" rel="noreferrer"><Github size={18} /></a>
               <a href="mailto:riyasaraf19@gmail.com"><Mail size={18} /></a>
-              <a href="https://leetcode.com/u/riyaaa19/" target="_blank" rel="noreferrer">LC</a>
-              <a href="https://www.hackerrank.com/profile/riyasaraf19" target="_blank" rel="noreferrer">HR</a>
             </div>
           </div>
           <div className="hero-img">
@@ -190,143 +162,77 @@ export default function RiyaSarafPortfolio() {
         </section>
       )}
 
-      {/* ===== About Section ===== */}
       {activePage === "about" && (
-        <section className="about">
+        <section>
           <h2>About Me</h2>
-          <div className="about-container" style={{ display: "flex", flexWrap: "wrap", gap: "40px", alignItems: "flex-start" }}>
-            
-            {/* Left Side: About Text + Skills */}
-            <div style={{ flex: 1 }}>
-              <ul style={{ paddingLeft: "0", lineHeight: "1.8", listStyle: "none" }}>
-                {[
-                  "Strong academic record with consistent top performance in Computer Science.",
-                  "Proficient in Python, React.js, Django, FastAPI, and modern data-analysis libraries.",
-                  "Enthusiastic about hackathons and collaborative problem solving — recognized for innovative solutions.",
-                  "Passionate about AI-driven applications that solve real-world problems.",
-                  "Dedicated to merging creativity and technology to create solutions that make a positive impact.",
-                  "Interested in contributing to open-source projects and continuously improving technical expertise."
-                ].map((point, index) => (
-                  <li key={index} style={{ position: "relative", paddingLeft: "25px", marginBottom: "12px", fontSize: "16px", color: "#333" }}>
-                    <span style={{ position: "absolute", left: 0, color: "#ff4da6", fontWeight: "bold", fontSize: "20px", lineHeight: "1" }}>•</span>
-                    {point}
-                  </li>
-                ))}
-              </ul>
-
-              {/* Skills Section */}
-              <h3 className="skills-heading">Skills</h3>
-              <div className="skills-section" style={{ display: "flex", flexWrap: "wrap", gap: "12px", justifyContent: "center" }}>
-                {[
-                  "C", "C++", "Python", "HTML", "CSS", "JavaScript",
-                  "FastAPI", "Flask", "Django", "React.js", "Scikit-learn", "Pandas", "NumPy",
-                  "Git", "GitHub", "VS Code", "MySQL", "Render", "Google Gemini API", "OmniDimension SDK",
-                  "Matplotlib", "Seaborn", "Plotly", "Streamlit",
-                  "REST APIs", "JWT/OAuth2 Authentication", "Document Parsing", "FAISS", "Uvicorn"
-                ].map((skill) => (
-                  <span key={skill} className="skills-card" style={{
-                    backgroundColor: "#ffe6f0",
-                    color: "#ff4da6",
-                    padding: "6px 12px",
-                    borderRadius: "20px",
-                    fontSize: "14px",
-                    fontWeight: "500"
-                  }}>{skill}</span>
-                ))}
-              </div>
-            </div>
-
-            {/* Right Side: About Image */}
-            <div className="about-img" >
-              <div className="avatar-circle">
-                <img
-                  src="/images/about.png"
-                  alt="About Me"
-                />
-              </div>
-            </div>
+          <div className="skills-section">
+            <h3>Skills</h3>
+            <ul>
+              <li><strong>Programming Languages:</strong> C, C++, Python, HTML, CSS, JavaScript</li>
+              <li><strong>Libraries/Frameworks:</strong> FastAPI, Flask, Django, React.js, Scikit-learn, Pandas, NumPy</li>
+              <li><strong>Tools / Platforms:</strong> Git, GitHub, VS Code, MySQL, Render, Google Gemini API, OmniDimension SDK</li>
+              <li><strong>Data Visualization:</strong> Matplotlib, Seaborn, Plotly, Streamlit</li>
+              <li><strong>Others:</strong> REST APIs, JWT/OAuth2 Authentication, Document Parsing, FAISS, Uvicorn</li>
+            </ul>
           </div>
         </section>
       )}
 
-      {/* ===== Projects Section ===== */}
       {activePage === "projects" && (
         <section>
           <h2>Projects</h2>
           <div className="grid">
             {projects.map((p, i) => (
-              <TimelineCard
-                key={i}
-                title={p.title}
-                subtitle={p.tech}
-                img={p.img}
-                score={<span style={{ color: "#555" }}>{p.desc}</span>}
-                github={p.github}
-                live={p.live}
-                type="project"
-              />
+              <TimelineCard key={i} title={p.title} subtitle={p.tech} img={p.img} score={<span>{p.desc}</span>} github={p.github} />
             ))}
           </div>
         </section>
       )}
 
-      {/* ===== Education Section ===== */}
       {activePage === "education" && (
         <section>
           <h2>Education</h2>
           <div className="timeline">
             {education.map((e, i) => (
-              <TimelineCard
-                key={i}
-                title={e.school}
-                subtitle={e.degree}
-                year={e.year}
-                score={e.score}
-                img={e.img}
-                type="education"
-              />
+              <TimelineCard key={i} title={e.school} subtitle={e.degree} year={e.year} score={e.score} img={e.img} />
             ))}
           </div>
         </section>
       )}
 
-      {/* ===== Certificates Section ===== */}
       {activePage === "certificates" && (
         <section>
           <h2>Certificates</h2>
           <div className="grid">
             {certificates.map((c, i) => (
-              <TimelineCard key={i} title={c.title} img={c.img} type="certificate" />
+              <TimelineCard key={i} title={c.title} img={c.img} />
             ))}
           </div>
         </section>
       )}
 
-      {/* ===== Awards Section ===== */}
       {activePage === "awards" && (
         <section>
           <h2>Awards</h2>
           <div className="grid">
             {awards.map((a, i) => (
-              <TimelineCard key={i} title={a.title} img={a.img} type="award" />
+              <TimelineCard key={i} title={a.title} img={a.img} />
             ))}
           </div>
         </section>
       )}
 
-      {/* ===== Hackathons Section ===== */}
       {activePage === "hackathons" && (
         <section>
           <h2>Hackathons & Conferences</h2>
           <div className="grid">
             {hackathons.map((h, i) => (
-              <TimelineCard key={i} title={h.title} subtitle={h.desc} img={h.img} type="certificate" />
+              <TimelineCard key={i} title={h.title} subtitle={h.desc} img={h.img} />
             ))}
           </div>
         </section>
       )}
 
-      {/* ===== Footer ===== */}
       <footer>© {new Date().getFullYear()} Riya Saraf — Built with ❤️</footer>
     </div>
   );

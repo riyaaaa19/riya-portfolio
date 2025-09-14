@@ -6,7 +6,6 @@ import "./styles.css";
 export default function RiyaSarafPortfolio() {
   const [activePage, setActivePage] = useState("home");
 
-  // ===== Data Sections =====
   const projects = [
     {
       title: "Leave Management System",
@@ -116,7 +115,6 @@ export default function RiyaSarafPortfolio() {
 
   return (
     <div>
-      {/* ===== Header ===== */}
       <header>
         <h1>Riya Saraf</h1>
         <nav>
@@ -132,7 +130,7 @@ export default function RiyaSarafPortfolio() {
         </nav>
       </header>
 
-      {/* ===== Home Section ===== */}
+      {/* ===== Home ===== */}
       {activePage === "home" && (
         <section className="hero">
           <div className="particle-bg">
@@ -190,66 +188,68 @@ export default function RiyaSarafPortfolio() {
         </section>
       )}
 
-      {/* ===== About Section ===== */}
-      {activePage === "about" && (
-        <section className="about">
-          <h2>About Me</h2>
-          <div className="about-container" style={{ display: "flex", flexWrap: "wrap", gap: "40px", alignItems: "flex-start" }}>
-            
-            {/* Left Side: About Text + Skills */}
-            <div style={{ flex: 1 }}>
-              <ul style={{ paddingLeft: "0", lineHeight: "1.8", listStyle: "none" }}>
-                {[
-                  "Strong academic record with consistent top performance in Computer Science.",
-                  "Proficient in Python, React.js, Django, FastAPI, and modern data-analysis libraries.",
-                  "Enthusiastic about hackathons and collaborative problem solving — recognized for innovative solutions.",
-                  "Passionate about AI-driven applications that solve real-world problems.",
-                  "Dedicated to merging creativity and technology to create solutions that make a positive impact.",
-                  "Interested in contributing to open-source projects and continuously improving technical expertise."
-                ].map((point, index) => (
-                  <li key={index} style={{ position: "relative", paddingLeft: "25px", marginBottom: "12px", fontSize: "16px", color: "#333" }}>
-                    <span style={{ position: "absolute", left: 0, color: "#ff4da6", fontWeight: "bold", fontSize: "20px", lineHeight: "1" }}>•</span>
-                    {point}
-                  </li>
+{/* ===== About Section ===== */}
+{activePage === "about" && (
+  <section className="about">
+    <h2>About Me</h2>
+    <div className="about-container" style={{ display: "flex", alignItems: "flex-start", gap: "40px", flexWrap: "wrap" }}>
+      
+      {/* ✅ Left Side: Text Points + Skills */}
+      <div style={{ flex: 1 }}>
+        <ul style={{ listStyle: "disc", paddingLeft: "20px", lineHeight: "1.8" }}>
+          <li>Strong academic record with consistent top performance in Computer Science.</li>
+          <li>Proficient in Python, React.js, Django, FastAPI, and modern data-analysis libraries.</li>
+          <li>Enthusiastic about hackathons and collaborative problem solving — recognized for innovative solutions.</li>
+          <li>Passionate about AI-driven applications that solve real-world problems.</li>
+          <li>Dedicated to merging creativity and technology to create solutions that make a positive impact.</li>
+          <li>Interested in contributing to open-source projects and continuously improving technical expertise.</li>
+        </ul>
+
+        {/* ✅ Skills Section */}
+        <h3 style={{ marginTop: "20px", textAlign: "center" }}>Skills</h3>
+       <div className="skills-section">
+        {/* Programming Languages */}
+        {["C", "C++", "Python", "HTML", "CSS", "JavaScript"].map((skill) => (
+          <span key={skill} className="skills-card">{skill}</span>
+          ))}
+          {/* Libraries/Frameworks */}
+          {["FastAPI", "Flask", "Django", "React.js", "Scikit-learn", "Pandas", "NumPy"].map((skill) => (
+            <span key={skill} className="skills-card">{skill}</span>
+            ))}
+            {/* Tools / Platforms */}
+            {["Git", "GitHub", "VS Code", "MySQL", "Render", "Google Gemini API", "OmniDimension SDK"].map((skill) => (
+              <span key={skill} className="skills-card">{skill}</span>
                 ))}
-              </ul>
+                {/* Data Visualization */}
+                {["Matplotlib", "Seaborn", "Plotly", "Streamlit"].map((skill) => (
+                  <span key={skill} className="skills-card">{skill}</span>
+                  ))}
+                  {/* Others */}
+                  {["REST APIs", "JWT/OAuth2 Authentication", "Document Parsing", "FAISS", "Uvicorn"].map((skill) => (
+                    <span key={skill} className="skills-card">{skill}</span>
+                  ))}
+                  </div>
+                  </div>
 
-              {/* Skills Section */}
-              <h3 className="skills-heading">Skills</h3>
-              <div className="skills-section" style={{ display: "flex", flexWrap: "wrap", gap: "12px", justifyContent: "center" }}>
-                {[
-                  "C", "C++", "Python", "HTML", "CSS", "JavaScript",
-                  "FastAPI", "Flask", "Django", "React.js", "Scikit-learn", "Pandas", "NumPy",
-                  "Git", "GitHub", "VS Code", "MySQL", "Render", "Google Gemini API", "OmniDimension SDK",
-                  "Matplotlib", "Seaborn", "Plotly", "Streamlit",
-                  "REST APIs", "JWT/OAuth2 Authentication", "Document Parsing", "FAISS", "Uvicorn"
-                ].map((skill) => (
-                  <span key={skill} className="skills-card" style={{
-                    backgroundColor: "#ffe6f0",
-                    color: "#ff4da6",
-                    padding: "6px 12px",
-                    borderRadius: "20px",
-                    fontSize: "14px",
-                    fontWeight: "500"
-                  }}>{skill}</span>
-                ))}
-              </div>
-            </div>
 
-            {/* Right Side: About Image */}
-            <div className="about-img" >
-              <div className="avatar-circle">
-                <img
-                  src="/images/about.png"
-                  alt="About Me"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
+      {/* ✅ Right Side: About Image */}
+      <div className="about-img" style={{ flex: "0 0 250px", textAlign: "center" }}>
+        <div className="avatar-circle" style={{ width: "250px", height: "250px", margin: "0 auto" }}>
+          <img
+            src="/images/about.png"
+            alt="About Me"
+            style={{ width: "100%", height: "100%", borderRadius: "50%", objectFit: "cover" }}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+)}
 
-      {/* ===== Projects Section ===== */}
+
+
+
+      {/* ===== Other Sections Unchanged ===== */}
       {activePage === "projects" && (
         <section>
           <h2>Projects</h2>
@@ -270,7 +270,6 @@ export default function RiyaSarafPortfolio() {
         </section>
       )}
 
-      {/* ===== Education Section ===== */}
       {activePage === "education" && (
         <section>
           <h2>Education</h2>
@@ -290,7 +289,6 @@ export default function RiyaSarafPortfolio() {
         </section>
       )}
 
-      {/* ===== Certificates Section ===== */}
       {activePage === "certificates" && (
         <section>
           <h2>Certificates</h2>
@@ -302,7 +300,6 @@ export default function RiyaSarafPortfolio() {
         </section>
       )}
 
-      {/* ===== Awards Section ===== */}
       {activePage === "awards" && (
         <section>
           <h2>Awards</h2>
@@ -314,7 +311,6 @@ export default function RiyaSarafPortfolio() {
         </section>
       )}
 
-      {/* ===== Hackathons Section ===== */}
       {activePage === "hackathons" && (
         <section>
           <h2>Hackathons & Conferences</h2>
@@ -326,7 +322,6 @@ export default function RiyaSarafPortfolio() {
         </section>
       )}
 
-      {/* ===== Footer ===== */}
       <footer>© {new Date().getFullYear()} Riya Saraf — Built with ❤️</footer>
     </div>
   );

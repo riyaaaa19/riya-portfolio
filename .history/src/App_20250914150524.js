@@ -6,7 +6,6 @@ import "./styles.css";
 export default function RiyaSarafPortfolio() {
   const [activePage, setActivePage] = useState("home");
 
-  // ===== Data Sections =====
   const projects = [
     {
       title: "Leave Management System",
@@ -116,7 +115,6 @@ export default function RiyaSarafPortfolio() {
 
   return (
     <div>
-      {/* ===== Header ===== */}
       <header>
         <h1>Riya Saraf</h1>
         <nav>
@@ -132,7 +130,7 @@ export default function RiyaSarafPortfolio() {
         </nav>
       </header>
 
-      {/* ===== Home Section ===== */}
+      {/* ===== Home ===== */}
       {activePage === "home" && (
         <section className="hero">
           <div className="particle-bg">
@@ -192,64 +190,34 @@ export default function RiyaSarafPortfolio() {
 
       {/* ===== About Section ===== */}
       {activePage === "about" && (
-        <section className="about">
+        <section className="about-section">
           <h2>About Me</h2>
-          <div className="about-container" style={{ display: "flex", flexWrap: "wrap", gap: "40px", alignItems: "flex-start" }}>
-            
-            {/* Left Side: About Text + Skills */}
-            <div style={{ flex: 1 }}>
-              <ul style={{ paddingLeft: "0", lineHeight: "1.8", listStyle: "none" }}>
-                {[
-                  "Strong academic record with consistent top performance in Computer Science.",
-                  "Proficient in Python, React.js, Django, FastAPI, and modern data-analysis libraries.",
-                  "Enthusiastic about hackathons and collaborative problem solving — recognized for innovative solutions.",
-                  "Passionate about AI-driven applications that solve real-world problems.",
-                  "Dedicated to merging creativity and technology to create solutions that make a positive impact.",
-                  "Interested in contributing to open-source projects and continuously improving technical expertise."
-                ].map((point, index) => (
-                  <li key={index} style={{ position: "relative", paddingLeft: "25px", marginBottom: "12px", fontSize: "16px", color: "#333" }}>
-                    <span style={{ position: "absolute", left: 0, color: "#ff4da6", fontWeight: "bold", fontSize: "20px", lineHeight: "1" }}>•</span>
-                    {point}
-                  </li>
-                ))}
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "40px", alignItems: "center" }}>
+            <div style={{ flex: 1, minWidth: "280px" }}>
+              <p>
+                “I’m a motivated Computer Science undergraduate with a consistent record of top academic performance and a deep interest in web development, data science, and machine learning. My technical toolkit spans Python, React.js, Django, FastAPI, and modern data-analysis libraries like Pandas and Scikit-learn.
+                Beyond coding, I thrive in collaborative hackathons and problem-solving challenges, where I’ve earned recognition for innovative solutions. I’m passionate about building AI-driven tools that solve real-world problems and improve user experiences.
+                My goal is to contribute to projects that merge creativity and technology, ultimately creating solutions that make a positive impact.”
+              </p>
+              <h3 style={{ color: "#ff4da6", marginTop: "20px" }}>Skills</h3>
+              <ul style={{ listStyle: "none", padding: 0, lineHeight: "1.8" }}>
+                <li><strong>Programming Languages:</strong> C, C++, Python, HTML, CSS, JavaScript</li>
+                <li><strong>Libraries/Frameworks:</strong> FastAPI, Flask, Django, React.js, Scikit-learn, Pandas, NumPy</li>
+                <li><strong>Tools / Platforms:</strong> Git, GitHub, VS Code, MySQL, Render, Google Gemini API, OmniDimension SDK</li>
+                <li><strong>Data Visualization:</strong> Matplotlib, Seaborn, Plotly, Streamlit</li>
+                <li><strong>Others:</strong> REST APIs, JWT/OAuth2 Authentication, Document Parsing, FAISS, Uvicorn</li>
               </ul>
-
-              {/* Skills Section */}
-              <h3 className="skills-heading">Skills</h3>
-              <div className="skills-section" style={{ display: "flex", flexWrap: "wrap", gap: "12px", justifyContent: "center" }}>
-                {[
-                  "C", "C++", "Python", "HTML", "CSS", "JavaScript",
-                  "FastAPI", "Flask", "Django", "React.js", "Scikit-learn", "Pandas", "NumPy",
-                  "Git", "GitHub", "VS Code", "MySQL", "Render", "Google Gemini API", "OmniDimension SDK",
-                  "Matplotlib", "Seaborn", "Plotly", "Streamlit",
-                  "REST APIs", "JWT/OAuth2 Authentication", "Document Parsing", "FAISS", "Uvicorn"
-                ].map((skill) => (
-                  <span key={skill} className="skills-card" style={{
-                    backgroundColor: "#ffe6f0",
-                    color: "#ff4da6",
-                    padding: "6px 12px",
-                    borderRadius: "20px",
-                    fontSize: "14px",
-                    fontWeight: "500"
-                  }}>{skill}</span>
-                ))}
-              </div>
             </div>
-
-            {/* Right Side: About Image */}
-            <div className="about-img" >
+            <div style={{ flex: "0 0 300px", display: "flex", justifyContent: "center" }}>
               <div className="avatar-circle">
-                <img
-                  src="/images/about.png"
-                  alt="About Me"
-                />
+                <img src="/images/about.png" alt="About Riya" />
               </div>
             </div>
           </div>
         </section>
       )}
 
-      {/* ===== Projects Section ===== */}
+      {/* ===== Other Sections Unchanged ===== */}
       {activePage === "projects" && (
         <section>
           <h2>Projects</h2>
@@ -270,7 +238,6 @@ export default function RiyaSarafPortfolio() {
         </section>
       )}
 
-      {/* ===== Education Section ===== */}
       {activePage === "education" && (
         <section>
           <h2>Education</h2>
@@ -290,7 +257,6 @@ export default function RiyaSarafPortfolio() {
         </section>
       )}
 
-      {/* ===== Certificates Section ===== */}
       {activePage === "certificates" && (
         <section>
           <h2>Certificates</h2>
@@ -302,7 +268,6 @@ export default function RiyaSarafPortfolio() {
         </section>
       )}
 
-      {/* ===== Awards Section ===== */}
       {activePage === "awards" && (
         <section>
           <h2>Awards</h2>
@@ -314,7 +279,6 @@ export default function RiyaSarafPortfolio() {
         </section>
       )}
 
-      {/* ===== Hackathons Section ===== */}
       {activePage === "hackathons" && (
         <section>
           <h2>Hackathons & Conferences</h2>
@@ -326,7 +290,6 @@ export default function RiyaSarafPortfolio() {
         </section>
       )}
 
-      {/* ===== Footer ===== */}
       <footer>© {new Date().getFullYear()} Riya Saraf — Built with ❤️</footer>
     </div>
   );

@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { Mail, Github, Linkedin } from "lucide-react";
-import TimelineCard from "./components/TimelineCard";
+import TimelineCard from "./components/TimelineCard"; // adjust path if needed
 import "./styles.css";
 
 export default function RiyaSarafPortfolio() {
   const [activePage, setActivePage] = useState("home");
 
-  // ===== Data Sections =====
   const projects = [
     {
       title: "Leave Management System",
@@ -37,12 +36,12 @@ export default function RiyaSarafPortfolio() {
       img: "/images/shecare.png",
     },
     {
-      title: "SmartGrocery — AI-Powered Grocery & Recipe Assistant",
-      tech: "Flask, Scikit-learn, Bootstrap, CSS",
-      desc: "Smart Grocery Web app for recipe suggestions, nutrition tracking, inventory management, and shopping lists.",
-      github: "https://github.com/arnavv19/Smart-Grocery-AI",
-      img: "/images/grocery.png",
-    },
+    title: "SmartGrocery — AI-Powered Grocery & Recipe Assistant",
+    tech: "Flask, Scikit-learn, Bootstrap, CSS",
+    desc: "Web app for recipe suggestions, nutrition tracking, inventory management, and shopping lists.",
+    github: "https://github.com/arnavv19/Smart-Grocery-AI",
+    img: "/images/grocery.png",
+    }
   ];
 
   const education = [
@@ -116,11 +115,10 @@ export default function RiyaSarafPortfolio() {
 
   return (
     <div>
-      {/* ===== Header ===== */}
       <header>
         <h1>Riya Saraf</h1>
         <nav>
-          {["home", "about", "projects", "education", "certificates", "awards", "hackathons"].map((page) => (
+          {["home", "projects", "education", "certificates", "awards", "hackathons"].map((page) => (
             <button
               key={page}
               onClick={() => setActivePage(page)}
@@ -132,7 +130,6 @@ export default function RiyaSarafPortfolio() {
         </nav>
       </header>
 
-      {/* ===== Home Section ===== */}
       {activePage === "home" && (
         <section className="hero">
           <div className="particle-bg">
@@ -153,31 +150,31 @@ export default function RiyaSarafPortfolio() {
               full-stack development, and ML/AI. Passionate about building
               impactful solutions and contributing to open-source projects.
             </p>
-
-            <div className="hero-buttons">
-              <button className="cta" onClick={() => setActivePage("projects")}>View Projects</button>
+            <div style={{ marginTop: "20px" }}>
+              <button className="cta" onClick={() => setActivePage("projects")}>
+                View Projects
+              </button>
               <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=riyasaraf19@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cta"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=riyasaraf19@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta"
+              style={{ display: "inline-block", textDecoration: "none" }}
               >
                 Contact Me
               </a>
-              <a
-                href={process.env.PUBLIC_URL + "/images/resume.pdf"}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cta"
-              >
-                View Resume
-              </a>
             </div>
-
+            
             <div className="social-icons">
-              <a href="https://linkedin.com/in/riya-saraf-9223a9257" target="_blank" rel="noreferrer"><Linkedin size={18} /></a>
-              <a href="https://github.com/riyaaaa19" target="_blank" rel="noreferrer"><Github size={18} /></a>
-              <a href="mailto:riyasaraf19@gmail.com"><Mail size={18} /></a>
+              <a href="https://linkedin.com/in/riya-saraf-9223a9257" target="_blank" rel="noreferrer">
+                <Linkedin size={18} />
+              </a>
+              <a href="https://github.com/riyaaaa19" target="_blank" rel="noreferrer">
+                <Github size={18} />
+              </a>
+              <a href="mailto:riyasaraf19@gmail.com">
+                <Mail size={18} />
+              </a>
               <a href="https://leetcode.com/u/riyaaa19/" target="_blank" rel="noreferrer">LC</a>
               <a href="https://www.hackerrank.com/profile/riyasaraf19" target="_blank" rel="noreferrer">HR</a>
             </div>
@@ -190,66 +187,6 @@ export default function RiyaSarafPortfolio() {
         </section>
       )}
 
-      {/* ===== About Section ===== */}
-      {activePage === "about" && (
-        <section className="about">
-          <h2>About Me</h2>
-          <div className="about-container" style={{ display: "flex", flexWrap: "wrap", gap: "40px", alignItems: "flex-start" }}>
-            
-            {/* Left Side: About Text + Skills */}
-            <div style={{ flex: 1 }}>
-              <ul style={{ paddingLeft: "0", lineHeight: "1.8", listStyle: "none" }}>
-                {[
-                  "Strong academic record with consistent top performance in Computer Science.",
-                  "Proficient in Python, React.js, Django, FastAPI, and modern data-analysis libraries.",
-                  "Enthusiastic about hackathons and collaborative problem solving — recognized for innovative solutions.",
-                  "Passionate about AI-driven applications that solve real-world problems.",
-                  "Dedicated to merging creativity and technology to create solutions that make a positive impact.",
-                  "Interested in contributing to open-source projects and continuously improving technical expertise."
-                ].map((point, index) => (
-                  <li key={index} style={{ position: "relative", paddingLeft: "25px", marginBottom: "12px", fontSize: "16px", color: "#333" }}>
-                    <span style={{ position: "absolute", left: 0, color: "#ff4da6", fontWeight: "bold", fontSize: "20px", lineHeight: "1" }}>•</span>
-                    {point}
-                  </li>
-                ))}
-              </ul>
-
-              {/* Skills Section */}
-              <h3 className="skills-heading">Skills</h3>
-              <div className="skills-section" style={{ display: "flex", flexWrap: "wrap", gap: "12px", justifyContent: "center" }}>
-                {[
-                  "C", "C++", "Python", "HTML", "CSS", "JavaScript",
-                  "FastAPI", "Flask", "Django", "React.js", "Scikit-learn", "Pandas", "NumPy",
-                  "Git", "GitHub", "VS Code", "MySQL", "Render", "Google Gemini API", "OmniDimension SDK",
-                  "Matplotlib", "Seaborn", "Plotly", "Streamlit",
-                  "REST APIs", "JWT/OAuth2 Authentication", "Document Parsing", "FAISS", "Uvicorn"
-                ].map((skill) => (
-                  <span key={skill} className="skills-card" style={{
-                    backgroundColor: "#ffe6f0",
-                    color: "#ff4da6",
-                    padding: "6px 12px",
-                    borderRadius: "20px",
-                    fontSize: "14px",
-                    fontWeight: "500"
-                  }}>{skill}</span>
-                ))}
-              </div>
-            </div>
-
-            {/* Right Side: About Image */}
-            <div className="about-img" >
-              <div className="avatar-circle">
-                <img
-                  src="/images/about.png"
-                  alt="About Me"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* ===== Projects Section ===== */}
       {activePage === "projects" && (
         <section>
           <h2>Projects</h2>
@@ -270,7 +207,6 @@ export default function RiyaSarafPortfolio() {
         </section>
       )}
 
-      {/* ===== Education Section ===== */}
       {activePage === "education" && (
         <section>
           <h2>Education</h2>
@@ -282,7 +218,7 @@ export default function RiyaSarafPortfolio() {
                 subtitle={e.degree}
                 year={e.year}
                 score={e.score}
-                img={e.img}
+                img={e.img} 
                 type="education"
               />
             ))}
@@ -290,7 +226,6 @@ export default function RiyaSarafPortfolio() {
         </section>
       )}
 
-      {/* ===== Certificates Section ===== */}
       {activePage === "certificates" && (
         <section>
           <h2>Certificates</h2>
@@ -302,7 +237,6 @@ export default function RiyaSarafPortfolio() {
         </section>
       )}
 
-      {/* ===== Awards Section ===== */}
       {activePage === "awards" && (
         <section>
           <h2>Awards</h2>
@@ -314,19 +248,23 @@ export default function RiyaSarafPortfolio() {
         </section>
       )}
 
-      {/* ===== Hackathons Section ===== */}
       {activePage === "hackathons" && (
         <section>
           <h2>Hackathons & Conferences</h2>
           <div className="grid">
             {hackathons.map((h, i) => (
-              <TimelineCard key={i} title={h.title} subtitle={h.desc} img={h.img} type="certificate" />
+              <TimelineCard
+                key={i}
+                title={h.title}
+                subtitle={h.desc}
+                img={h.img}
+                type="certificate"
+              />
             ))}
           </div>
         </section>
       )}
 
-      {/* ===== Footer ===== */}
       <footer>© {new Date().getFullYear()} Riya Saraf — Built with ❤️</footer>
     </div>
   );

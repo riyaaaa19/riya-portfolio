@@ -6,7 +6,6 @@ import "./styles.css";
 export default function RiyaSarafPortfolio() {
   const [activePage, setActivePage] = useState("home");
 
-  // ===== Data Sections =====
   const projects = [
     {
       title: "Leave Management System",
@@ -116,7 +115,6 @@ export default function RiyaSarafPortfolio() {
 
   return (
     <div>
-      {/* ===== Header ===== */}
       <header>
         <h1>Riya Saraf</h1>
         <nav>
@@ -132,12 +130,9 @@ export default function RiyaSarafPortfolio() {
         </nav>
       </header>
 
-      {/* ===== Home Section ===== */}
+      {/* ===== HOME ===== */}
       {activePage === "home" && (
         <section className="hero">
-          <div className="particle-bg">
-            <span></span><span></span><span></span><span></span><span></span>
-          </div>
           <div className="hero-text">
             <h2>
               Hi There, I'm <span className="highlight">Riya Saraf</span>
@@ -153,27 +148,11 @@ export default function RiyaSarafPortfolio() {
               full-stack development, and ML/AI. Passionate about building
               impactful solutions and contributing to open-source projects.
             </p>
-
             <div className="hero-buttons">
               <button className="cta" onClick={() => setActivePage("projects")}>View Projects</button>
-              <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=riyasaraf19@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cta"
-              >
-                Contact Me
-              </a>
-              <a
-                href={process.env.PUBLIC_URL + "/images/resume.pdf"}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cta"
-              >
-                View Resume
-              </a>
+              <a href="mailto:riyasaraf19@gmail.com" target="_blank" rel="noopener noreferrer" className="cta">Contact Me</a>
+              <a href={process.env.PUBLIC_URL + "/images/resume.pdf"} target="_blank" rel="noopener noreferrer" className="cta">View Resume</a>
             </div>
-
             <div className="social-icons">
               <a href="https://linkedin.com/in/riya-saraf-9223a9257" target="_blank" rel="noreferrer"><Linkedin size={18} /></a>
               <a href="https://github.com/riyaaaa19" target="_blank" rel="noreferrer"><Github size={18} /></a>
@@ -190,107 +169,60 @@ export default function RiyaSarafPortfolio() {
         </section>
       )}
 
-      {/* ===== About Section ===== */}
+      {/* ===== ABOUT ===== */}
       {activePage === "about" && (
-        <section className="about">
-          <h2>About Me</h2>
-          <div className="about-container" style={{ display: "flex", flexWrap: "wrap", gap: "40px", alignItems: "flex-start" }}>
-            
-            {/* Left Side: About Text + Skills */}
-            <div style={{ flex: 1 }}>
-              <ul style={{ paddingLeft: "0", lineHeight: "1.8", listStyle: "none" }}>
-                {[
-                  "Strong academic record with consistent top performance in Computer Science.",
-                  "Proficient in Python, React.js, Django, FastAPI, and modern data-analysis libraries.",
-                  "Enthusiastic about hackathons and collaborative problem solving — recognized for innovative solutions.",
-                  "Passionate about AI-driven applications that solve real-world problems.",
-                  "Dedicated to merging creativity and technology to create solutions that make a positive impact.",
-                  "Interested in contributing to open-source projects and continuously improving technical expertise."
-                ].map((point, index) => (
-                  <li key={index} style={{ position: "relative", paddingLeft: "25px", marginBottom: "12px", fontSize: "16px", color: "#333" }}>
-                    <span style={{ position: "absolute", left: 0, color: "#ff4da6", fontWeight: "bold", fontSize: "20px", lineHeight: "1" }}>•</span>
-                    {point}
-                  </li>
-                ))}
+        <section className="about-section">
+          <div className="about-content">
+            <div className="about-text">
+              <h2>About Me</h2>
+              <p>
+                Motivated Computer Science undergraduate with a strong academic record and
+                consistent top performance. Skilled in Python, data analysis, and
+                problem-solving, with a passion for building impactful tech solutions.
+              </p>
+              <h3>Skills</h3>
+              <ul>
+                <li><strong>Programming Languages:</strong> C, C++, Python, HTML, CSS, JavaScript</li>
+                <li><strong>Libraries/Frameworks:</strong> FastAPI, Flask, Django, React.js, Scikit-learn, Pandas, NumPy</li>
+                <li><strong>Tools / Platforms:</strong> Git, GitHub, VS Code, MySQL, Render, Google Gemini API, OmniDimension SDK</li>
+                <li><strong>Data Visualization:</strong> Matplotlib, Seaborn, Plotly, Streamlit</li>
+                <li><strong>Others:</strong> REST APIs, JWT/OAuth2 Authentication, Document Parsing, FAISS, Uvicorn</li>
               </ul>
-
-              {/* Skills Section */}
-              <h3 className="skills-heading">Skills</h3>
-              <div className="skills-section" style={{ display: "flex", flexWrap: "wrap", gap: "12px", justifyContent: "center" }}>
-                {[
-                  "C", "C++", "Python", "HTML", "CSS", "JavaScript",
-                  "FastAPI", "Flask", "Django", "React.js", "Scikit-learn", "Pandas", "NumPy",
-                  "Git", "GitHub", "VS Code", "MySQL", "Render", "Google Gemini API", "OmniDimension SDK",
-                  "Matplotlib", "Seaborn", "Plotly", "Streamlit",
-                  "REST APIs", "JWT/OAuth2 Authentication", "Document Parsing", "FAISS", "Uvicorn"
-                ].map((skill) => (
-                  <span key={skill} className="skills-card" style={{
-                    backgroundColor: "#ffe6f0",
-                    color: "#ff4da6",
-                    padding: "6px 12px",
-                    borderRadius: "20px",
-                    fontSize: "14px",
-                    fontWeight: "500"
-                  }}>{skill}</span>
-                ))}
-              </div>
             </div>
-
-            {/* Right Side: About Image */}
-            <div className="about-img" >
+            <div className="about-img">
               <div className="avatar-circle">
-                <img
-                  src="/images/about.png"
-                  alt="About Me"
-                />
+                <img src="/images/about.png" alt="About Riya" />
               </div>
             </div>
           </div>
         </section>
       )}
 
-      {/* ===== Projects Section ===== */}
+      {/* ===== PROJECTS ===== */}
       {activePage === "projects" && (
         <section>
           <h2>Projects</h2>
           <div className="grid">
             {projects.map((p, i) => (
-              <TimelineCard
-                key={i}
-                title={p.title}
-                subtitle={p.tech}
-                img={p.img}
-                score={<span style={{ color: "#555" }}>{p.desc}</span>}
-                github={p.github}
-                live={p.live}
-                type="project"
-              />
+              <TimelineCard key={i} title={p.title} subtitle={p.tech} img={p.img} score={<span>{p.desc}</span>} github={p.github} />
             ))}
           </div>
         </section>
       )}
 
-      {/* ===== Education Section ===== */}
+      {/* ===== EDUCATION ===== */}
       {activePage === "education" && (
         <section>
           <h2>Education</h2>
           <div className="timeline">
             {education.map((e, i) => (
-              <TimelineCard
-                key={i}
-                title={e.school}
-                subtitle={e.degree}
-                year={e.year}
-                score={e.score}
-                img={e.img}
-                type="education"
-              />
+              <TimelineCard key={i} title={e.school} subtitle={e.degree} year={e.year} score={e.score} img={e.img} type="education" />
             ))}
           </div>
         </section>
       )}
 
-      {/* ===== Certificates Section ===== */}
+      {/* ===== CERTIFICATES ===== */}
       {activePage === "certificates" && (
         <section>
           <h2>Certificates</h2>
@@ -302,7 +234,7 @@ export default function RiyaSarafPortfolio() {
         </section>
       )}
 
-      {/* ===== Awards Section ===== */}
+      {/* ===== AWARDS ===== */}
       {activePage === "awards" && (
         <section>
           <h2>Awards</h2>
@@ -314,7 +246,7 @@ export default function RiyaSarafPortfolio() {
         </section>
       )}
 
-      {/* ===== Hackathons Section ===== */}
+      {/* ===== HACKATHONS ===== */}
       {activePage === "hackathons" && (
         <section>
           <h2>Hackathons & Conferences</h2>
@@ -326,7 +258,6 @@ export default function RiyaSarafPortfolio() {
         </section>
       )}
 
-      {/* ===== Footer ===== */}
       <footer>© {new Date().getFullYear()} Riya Saraf — Built with ❤️</footer>
     </div>
   );

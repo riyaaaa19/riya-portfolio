@@ -215,7 +215,7 @@ export default function RiyaSarafPortfolio() {
               </ul>
 
               {/* Skills Section */}
-              <h3 className="skills-heading">Skills</h3>
+              <h3 style={{ marginTop: "25px", marginBottom: "15px", color: "DarkPink", textAlign: "center" }}>Skills</h3>
               <div className="skills-section" style={{ display: "flex", flexWrap: "wrap", gap: "12px", justifyContent: "center" }}>
                 {[
                   "C", "C++", "Python", "HTML", "CSS", "JavaScript",

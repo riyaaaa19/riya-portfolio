@@ -198,7 +198,7 @@ export default function RiyaSarafPortfolio() {
             
             {/* Left Side: About Text + Skills */}
             <div style={{ flex: 1 }}>
-              <ul style={{ paddingLeft: "0", lineHeight: "1.8", listStyle: "none" }}>
+              <ul style={{ paddingLeft: "0", lineHeight: "1.8", listStyle: "none", top: "0.2em" }}>
                 {[
                   "Strong academic record with consistent top performance in Computer Science.",
                   "Proficient in Python, React.js, Django, FastAPI, and modern data-analysis libraries.",
@@ -215,7 +215,7 @@ export default function RiyaSarafPortfolio() {
               </ul>
 
               {/* Skills Section */}
-              <h3 className="skills-heading">Skills</h3>
+              <h3 style={{ marginTop: "25px", marginBottom: "15px", color: "DarkPink", textAlign: "center" }}>Skills</h3>
               <div className="skills-section" style={{ display: "flex", flexWrap: "wrap", gap: "12px", justifyContent: "center" }}>
                 {[
                   "C", "C++", "Python", "HTML", "CSS", "JavaScript",
@@ -237,11 +237,12 @@ export default function RiyaSarafPortfolio() {
             </div>
 
             {/* Right Side: About Image */}
-            <div className="about-img" >
-              <div className="avatar-circle">
+            <div className="about-img" style={{ flex: "0 0 250px", textAlign: "center", marginTop: "0" }}>
+              <div className="avatar-circle" style={{ width: "250px", height: "250px", margin: "0 auto" }}>
                 <img
                   src="/images/about.png"
                   alt="About Me"
+                  style={{ width: "100%", height: "100%", borderRadius: "50%", objectFit: "cover" }}
                 />
               </div>
             </div>

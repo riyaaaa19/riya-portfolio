@@ -215,8 +215,8 @@ button.outline {
 
 .hero-buttons button.cta,
 .hero-buttons a.cta {
-  flex: 1;
-  min-width: 140px;
+  flex: 1;             /* ✅ Each takes equal width */
+  min-width: 140px;    /* ✅ Minimum width for smaller screens */
   text-align: center;
 }
 
@@ -239,7 +239,7 @@ button.outline:hover {
     background: #ff4da6;
     color: white;
 }
-
+/* Make <a class="cta"> look like button */
 a.cta {
     display: inline-block;
     margin-right: 12px;
@@ -259,6 +259,7 @@ a.cta {
 a.cta:hover {
     background: #e04494;
 }
+
 
 /* ===== Social Icons ===== */
 .social-icons {
@@ -370,11 +371,10 @@ footer {
         margin-top: 30px;
     }
 }
-
 /* ===== Timeline Styling for Education (Right-side Images) ===== */
 .timeline {
     position: relative;
-    padding-right: 60px;
+    padding-right: 60px; /* space for images on the right */
     margin-left: 20px;
     border-left: 3px solid #ff4da6;
 }
@@ -399,7 +399,7 @@ footer {
     object-fit: cover;
     border-radius: 50%;
     position: absolute;
-    right: -65px;
+    right: -65px; /* move image to the right of the card */
     top: 15px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.15);
 }
@@ -415,7 +415,6 @@ footer {
     font-size: 14px;
     color: #555;
 }
-
 /* ===== About Section ===== */
 .about {
     background: #fff5f9;
@@ -463,39 +462,35 @@ footer {
 .about-container ul li {
     font-size: 16px;
     color: #333;
-    line-height: 1.6;
-    padding-left: 30px;
+    line-height: 1.8;
     margin-bottom: 12px;
     position: relative;
-    padding-left: 30px;
-    align-items: flex-start;
+    padding-left: 25px;
 }
 
 .about-container ul li::before {
+    content: "•";
     position: absolute;
     left: 0;
-    top: 0;
-    font-size: 18px;
     color: #ff4da6;
     font-weight: bold;
+    font-size: 20px;
     line-height: 1;
 }
 
 /* About image */
 .about-img {
-    flex: 0 0 320px; /* increased width */
-    display: flex;   /* enable flexbox */
-    justify-content: center;
-    align-items: center; /* vertically center with the points */
-    margin-top: -70px;
+    flex: 0 0 250px;
+    text-align: center;
 }
 
 .about-img .avatar-circle {
-    width: 320px;  /* increased size */
-    height: 320px; /* increased size */
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -510,59 +505,57 @@ footer {
     box-shadow: 0 12px 30px rgba(255,77,166,0.3);
 }
 
-
 /* ===== Skills Section ===== */
 .skills-section {
     flex: 1 1 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px; /* spacing between capsules */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
     margin-top: 40px;
-    justify-content: center;
 }
 
 .skills-card {
-    background: #ffe6f0;
-    color: #ff4da6;
-    padding: 8px 15px;
-    border-radius: 50px;
-    font-size: 14px;
-    font-weight: 600;
-    display: inline-block;
-    transition: transform 0.2s, box-shadow 0.2s;
-    cursor: default;
+    background: linear-gradient(135deg, #fff0f6 0%, #ffe6f0 100%);
+    padding: 20px 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .skills-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255,77,166,0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(255,77,166,0.2);
 }
 
-.skills-card h4,
-.skills-card ul,
-.skills-card li {
-    display: none; /* hide old headings/lists */
-}
-.about h3.skills-heading {
-    color: #ff1493; /* Dark Pink */
-    text-align: center;
+.skills-card h4 {
+    font-size: 18px;
     font-weight: 700;
-    margin-top: 40px;
-    margin-bottom: 20px;
+    color: #ff4da6;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.skills-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills-card li {
     position: relative;
-    font-size: 24px;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    font-size: 14.5px;
+    color: #333;
 }
 
-.about h3.skills-heading::after {
-    content: "";
-    width: 80px;       /* length of underline */
-    height: 3px;       /* thickness */
-    background: #ff1493; /* Dark Pink underline */
-    display: block;
-    margin: 10px auto 0;
-    border-radius: 2px;
+.skills-card li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #ff4da6;
+    font-weight: bold;
 }
-
 
 /* ===== Responsive About Section ===== */
 @media (max-width: 900px) {
@@ -578,6 +571,6 @@ footer {
 
 @media (max-width: 600px) {
     .skills-section {
-        justify-content: center;
+        grid-template-columns: 1fr;
     }
 }

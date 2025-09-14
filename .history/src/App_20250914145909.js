@@ -6,7 +6,6 @@ import "./styles.css";
 export default function RiyaSarafPortfolio() {
   const [activePage, setActivePage] = useState("home");
 
-  // ===== Data Sections =====
   const projects = [
     {
       title: "Leave Management System",
@@ -116,11 +115,10 @@ export default function RiyaSarafPortfolio() {
 
   return (
     <div>
-      {/* ===== Header ===== */}
       <header>
         <h1>Riya Saraf</h1>
         <nav>
-          {["home", "about", "projects", "education", "certificates", "awards", "hackathons"].map((page) => (
+          {["home", "projects", "education", "certificates", "awards", "hackathons"].map((page) => (
             <button
               key={page}
               onClick={() => setActivePage(page)}
@@ -132,12 +130,12 @@ export default function RiyaSarafPortfolio() {
         </nav>
       </header>
 
-      {/* ===== Home Section ===== */}
       {activePage === "home" && (
         <section className="hero">
           <div className="particle-bg">
             <span></span><span></span><span></span><span></span><span></span>
           </div>
+
           <div className="hero-text">
             <h2>
               Hi There, I'm <span className="highlight">Riya Saraf</span>
@@ -154,6 +152,7 @@ export default function RiyaSarafPortfolio() {
               impactful solutions and contributing to open-source projects.
             </p>
 
+            {/* Buttons */}
             <div className="hero-buttons">
               <button className="cta" onClick={() => setActivePage("projects")}>View Projects</button>
               <a
@@ -174,6 +173,7 @@ export default function RiyaSarafPortfolio() {
               </a>
             </div>
 
+            {/* Social Links */}
             <div className="social-icons">
               <a href="https://linkedin.com/in/riya-saraf-9223a9257" target="_blank" rel="noreferrer"><Linkedin size={18} /></a>
               <a href="https://github.com/riyaaaa19" target="_blank" rel="noreferrer"><Github size={18} /></a>
@@ -181,7 +181,20 @@ export default function RiyaSarafPortfolio() {
               <a href="https://leetcode.com/u/riyaaa19/" target="_blank" rel="noreferrer">LC</a>
               <a href="https://www.hackerrank.com/profile/riyasaraf19" target="_blank" rel="noreferrer">HR</a>
             </div>
+
+            {/* ✅ Skills Section */}
+            <div className="skills-section" style={{ marginTop: "40px" }}>
+              <h3 style={{ color: "#ff4da6", marginBottom: "15px" }}>Skills</h3>
+              <ul style={{ listStyle: "none", padding: 0, lineHeight: "1.8" }}>
+                <li><strong>Programming Languages:</strong> C, C++, Python, HTML, CSS, JavaScript</li>
+                <li><strong>Libraries/Frameworks:</strong> FastAPI, Flask, Django, React.js, Scikit-learn, Pandas, NumPy</li>
+                <li><strong>Tools / Platforms:</strong> Git, GitHub, VS Code, MySQL, Render, Google Gemini API, OmniDimension SDK</li>
+                <li><strong>Data Visualization:</strong> Matplotlib, Seaborn, Plotly, Streamlit</li>
+                <li><strong>Others:</strong> REST APIs, JWT/OAuth2 Authentication, Document Parsing, FAISS, Uvicorn</li>
+              </ul>
+            </div>
           </div>
+
           <div className="hero-img">
             <div className="avatar-circle">
               <img src="/images/riya-photo.png" alt="Riya Saraf" />
@@ -190,66 +203,7 @@ export default function RiyaSarafPortfolio() {
         </section>
       )}
 
-      {/* ===== About Section ===== */}
-      {activePage === "about" && (
-        <section className="about">
-          <h2>About Me</h2>
-          <div className="about-container" style={{ display: "flex", flexWrap: "wrap", gap: "40px", alignItems: "flex-start" }}>
-            
-            {/* Left Side: About Text + Skills */}
-            <div style={{ flex: 1 }}>
-              <ul style={{ paddingLeft: "0", lineHeight: "1.8", listStyle: "none" }}>
-                {[
-                  "Strong academic record with consistent top performance in Computer Science.",
-                  "Proficient in Python, React.js, Django, FastAPI, and modern data-analysis libraries.",
-                  "Enthusiastic about hackathons and collaborative problem solving — recognized for innovative solutions.",
-                  "Passionate about AI-driven applications that solve real-world problems.",
-                  "Dedicated to merging creativity and technology to create solutions that make a positive impact.",
-                  "Interested in contributing to open-source projects and continuously improving technical expertise."
-                ].map((point, index) => (
-                  <li key={index} style={{ position: "relative", paddingLeft: "25px", marginBottom: "12px", fontSize: "16px", color: "#333" }}>
-                    <span style={{ position: "absolute", left: 0, color: "#ff4da6", fontWeight: "bold", fontSize: "20px", lineHeight: "1" }}>•</span>
-                    {point}
-                  </li>
-                ))}
-              </ul>
-
-              {/* Skills Section */}
-              <h3 className="skills-heading">Skills</h3>
-              <div className="skills-section" style={{ display: "flex", flexWrap: "wrap", gap: "12px", justifyContent: "center" }}>
-                {[
-                  "C", "C++", "Python", "HTML", "CSS", "JavaScript",
-                  "FastAPI", "Flask", "Django", "React.js", "Scikit-learn", "Pandas", "NumPy",
-                  "Git", "GitHub", "VS Code", "MySQL", "Render", "Google Gemini API", "OmniDimension SDK",
-                  "Matplotlib", "Seaborn", "Plotly", "Streamlit",
-                  "REST APIs", "JWT/OAuth2 Authentication", "Document Parsing", "FAISS", "Uvicorn"
-                ].map((skill) => (
-                  <span key={skill} className="skills-card" style={{
-                    backgroundColor: "#ffe6f0",
-                    color: "#ff4da6",
-                    padding: "6px 12px",
-                    borderRadius: "20px",
-                    fontSize: "14px",
-                    fontWeight: "500"
-                  }}>{skill}</span>
-                ))}
-              </div>
-            </div>
-
-            {/* Right Side: About Image */}
-            <div className="about-img" >
-              <div className="avatar-circle">
-                <img
-                  src="/images/about.png"
-                  alt="About Me"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* ===== Projects Section ===== */}
+      {/* Other Sections */}
       {activePage === "projects" && (
         <section>
           <h2>Projects</h2>
@@ -270,7 +224,6 @@ export default function RiyaSarafPortfolio() {
         </section>
       )}
 
-      {/* ===== Education Section ===== */}
       {activePage === "education" && (
         <section>
           <h2>Education</h2>
@@ -290,7 +243,6 @@ export default function RiyaSarafPortfolio() {
         </section>
       )}
 
-      {/* ===== Certificates Section ===== */}
       {activePage === "certificates" && (
         <section>
           <h2>Certificates</h2>
@@ -302,7 +254,6 @@ export default function RiyaSarafPortfolio() {
         </section>
       )}
 
-      {/* ===== Awards Section ===== */}
       {activePage === "awards" && (
         <section>
           <h2>Awards</h2>
@@ -314,7 +265,6 @@ export default function RiyaSarafPortfolio() {
         </section>
       )}
 
-      {/* ===== Hackathons Section ===== */}
       {activePage === "hackathons" && (
         <section>
           <h2>Hackathons & Conferences</h2>
@@ -326,7 +276,6 @@ export default function RiyaSarafPortfolio() {
         </section>
       )}
 
-      {/* ===== Footer ===== */}
       <footer>© {new Date().getFullYear()} Riya Saraf — Built with ❤️</footer>
     </div>
   );
